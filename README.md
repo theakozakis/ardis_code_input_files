@@ -2,7 +2,7 @@
 Codes to generate input files for ardis
 
 
-There are four codes here:
+There are five codes here:
 
 ### read_chem_files.py:
 
@@ -97,7 +97,7 @@ Outputs: reflectance and emission AUTOSPEC files
     
     
 ## Instructions
-Put all 4 codes in the same directory and run make_AUTO with your LAYERS file, chem file, molecule list, and stellar host temperature as inputs.  At the end of make_AUTO.py there is an example run with an example molecule list.
+Put all 5 codes in the same directory and run make_AUTO with your LAYERS file, chem file, molecule list, and stellar host temperature as inputs.  At the end of make_AUTO.py there is an example run with an example molecule list.
     
     
     
