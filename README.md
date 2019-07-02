@@ -5,12 +5,12 @@ Codes to generate input files for ardis
 There are four codes here:
 
 read_chem_files.py:
-Code to read in chem files outputted by CHEMCLIM and search for specific molecule:
-    read_chem_files(filename,molname)    
+Code to read in chem files outputted by CHEMCLIM and search for specific molecule: 
+    read_chem_files(filename,molname) 
 Inputs: chem file name, molecule name
-    filename:  path to chem file as a string
-    molname:  molecule name as a string    
-Outputs:
+    filename:  path to chem file as a string 
+    molname:  molecule name as a string     
+Outputs: 
     Element 0: list of mixing ratios
     Element 1: list of corresponding altitudes (km)
     
