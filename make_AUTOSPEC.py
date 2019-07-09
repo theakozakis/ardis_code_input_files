@@ -14,6 +14,7 @@ Inputs: LAYERS file, chem file, molecule list, stellar host temperature
 Outputs: reflectance and emission AUTOSPEC files
     Reflectance file:  original LAYERS file name with suffix _AUTOSPEC_reflectance
     Emission file:  original LAYERS file name with suffix _AUTOSPEC_emission
+    Emission files with clouds: like emission, but with _#km suffix with cloud altitude
 """
 
 def make_AUTOSPEC(layersfile,chemfile,mollist,temp,clist):
