@@ -120,7 +120,7 @@ Outputs: reflectance and emission AUTOSPEC files
     
     
 ## Instructions
-Put all 5 codes in the same directory and run make_AUTO with your LAYERS file, chem file, molecule list, stellar host temperature, and list of cloud altitudes as inputs.  At the end of make_AUTO.py there is an example run with an example molecule list and cloud altitude list.
+Put all 6 codes in the same directory and run make_AUTO with your LAYERS file, chem file, molecule list, stellar host temperature, and list of cloud altitudes as inputs.  At the end of make_AUTO.py there is an example run with an example molecule list and cloud altitude list.
     
     
     
