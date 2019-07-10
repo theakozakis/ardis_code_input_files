@@ -36,7 +36,7 @@ Outputs:
 
     Element 0:  list of effective altitudes
     
-    Element 1: temperature of the lowest layer
+    Element 1:  list of temperatures for all layers
     
 ### make_AUTOSPEC_reflectance.py:
 Code to create reflectance AUTOSPEC files:
