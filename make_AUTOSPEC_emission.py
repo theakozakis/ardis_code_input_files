@@ -32,7 +32,10 @@ def make_AUTOSPEC_emission(layersfile,chemfile,mollist):
     # Find effective altitudes and lowest altitude temperature from LAYERS file
     lay = read_LAYERS(layersfile)
     ealt = lay[0]
-    tlow = lay[1]
+    tlist = lay[1]
+    
+    # Reference temperature should be the temperature of the lowest layer
+    tlow = tlist[-1]
     
     # Write header info
     f.write('! Parameter file for AUTOSPEC.\n')
