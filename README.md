@@ -1,4 +1,4 @@
-# ardis_code_input_files
+# Code documentation
 Codes to generate input files for ardis
 
 
