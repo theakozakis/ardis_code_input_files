@@ -33,7 +33,18 @@ def make_AUTOSPEC_emission_clouds(layersfile,chemfile,mollist,calt):
     # Find effective altitudes and lowest altitude temperature from LAYERS file
     lay = read_LAYERS(layersfile)
     ealt = lay[0]
-    tlow = lay[1]
+    tlist = lay[1]
+    
+    # Find index of layer with closest cloud altitude altitude
+    caltc = min(ealt, key=lambda x:abs(x-calt))
+    # Find the index of that altitude
+    inc = ealt.index(caltc)
+    print(str(calt)+' km: layer '+str(inc+1))
+    
+    # Reference temperature should be the temperature of that layer
+    tlow = tlist[inc]
+    
+
     
     # Write header info
     f.write('! Parameter file for AUTOSPEC.\n')
@@ -165,13 +176,7 @@ def make_AUTOSPEC_emission_clouds(layersfile,chemfile,mollist,calt):
     for i in range(len(ealt)):
         cont.append('0.00E+00')
         
-    # For an emission spectrum with clouds, the altitude of clouds should be 1.00E-05
-    # Find index of layer with closest altitude
-    caltc = min(ealt, key=lambda x:abs(x-calt))
-    # Find the index of that altitude
-    inc = ealt.index(caltc)
-    
-    # Make that element 1e-5
+    # For an emission spectrum with clouds, the altitude of clouds should be 1.00E-05    
     cont[inc] = '1.00E-05'
         
     # First row
