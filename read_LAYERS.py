@@ -9,7 +9,7 @@ Input:  LAYERS file
     
 Outputs:
     Element 0:  list of effective altitudes
-    Element 1: temperature of the lowest layer
+    Element 1:  list of temperatures for all layers
 """
 
 def read_LAYERS(filename):
@@ -59,7 +59,7 @@ def read_LAYERS(filename):
     # There will be n elements of data with 4 elements per line
     nrow = int(np.ceil(n/4))
     
-    # Read in the data
+    # Read effective altitude data
     ealt = []
     # For the first row don't read in the first two and last elements
     # The first row will be the second list of altitudes
@@ -79,14 +79,33 @@ def read_LAYERS(filename):
     for i in range(len(row)):
         ealt.append(float(row[i]))
         
-    # Read in the temperature of the lowest layer
-    # It will be the last element of the last line of temperatures
-    row = rows[indT+nrow-1].split()
-    tlow = float(row[-1])
+        
+    # Read temperature data
+    t = []
+    # For the first row don't read in the first two and last elements
+    # The first row will be the second list of altitudes
+    row = rows[indT].split()
+    for i in range(2,len(row)-1):
+        t.append(float(row[i]))
     
+    ind2 = indT+nrow-1
+    # For the 'middle rows' use every element except the last (^)
+    for i in range(indT+1,ind2):
+        row = rows[i].split()
+        for k in range(len(row)-1):
+            t.append(float(row[k]))
+            
+    # For the last row read in all elements
+    row = rows[ind2].split()
+    for i in range(len(row)):
+        t.append(float(row[i]))
+        
+
     
 
-    return ealt,tlow
+    return ealt,t
+
+
     
     
 
