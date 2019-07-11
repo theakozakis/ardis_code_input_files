@@ -41,8 +41,8 @@ def make_AUTOSPEC_emission_clouds(layersfile,chemfile,mollist,calt):
     inc = ealt.index(caltc)
     print(str(calt)+' km: layer '+str(inc+1))
     
-    # Reference temperature should be the temperature of that layer
-    tlow = tlist[inc]
+    # Reference temperature should be the temperature of the lowest layer
+    tlow = tlist[-1]
     
 
     
